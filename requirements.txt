@@ -4,3 +4,6 @@ scikit-learn
 seaborn
 matplotlib
 notebook
+scipy
+flask
+flask-cors
