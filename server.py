@@ -31,7 +31,7 @@ def initialize_data():
     )
 
     # Map track_id to track_name and artist
-    track_mapping = df.set_index('track_id')[['track_name', 'artists']]
+    track_mapping = df.set_index('track_id')[['track_name', 'artists', 'album_name']]
 
 initialize_data()
 
@@ -62,7 +62,9 @@ def get_recommendations():
             track_info = track_mapping.loc[rec_id]
             recommendations.append({
                 "track_name": track_info['track_name'],
-                "artist": track_info['artists']
+                "artist": track_info['artists'],
+                "album_name": track_info['album_name']
+                
             })
 
         # Respond with recommendations
